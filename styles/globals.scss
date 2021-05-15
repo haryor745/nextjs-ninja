@@ -3,11 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body::-webkit-scrollbar {
   width: 0;
 }
-
 @font-face {
   font-family: "Stinger Bold Baby";
   src: url("./Stinger-Bold.otf") format("opentype");
@@ -20,16 +18,13 @@ body {
   color: #ffb703;
   font-family: "Stinger Bold Baby";
 }
-
 .header {
   text-align: center;
   margin-top: 50px;
 }
-
 img {
   max-width: 100%;
 }
-
 main {
   max-width: 650px;
   margin: 50px auto;
@@ -38,24 +33,21 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-
 .display {
   max-height: 375px;
   max-width: 500px;
   margin: 0 13px;
   overflow: hidden;
   border-radius: 10px;
+  img {
+    border: 3px solid #48cae4;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
-.display img {
-  border: 3px solid #48cae4;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.6);
-  border-radius: inherit;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .img-cont {
   width: 90vw;
   margin: 20px auto;
@@ -64,60 +56,53 @@ main {
   max-width: 700px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
-.img-cont img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .active {
   border: 2px solid #ffb703;
   position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 184, 3, 0.438);
+  }
 }
-.active::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 184, 3, 0.438);
-}
-
 .card {
   transition: transform 0.2s;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.208);
+  img {
+    border-radius: 4px;
+  }
+  &:hover {
+    transform: scale(1.06);
+  }
 }
-.card img {
-  border-radius: 4px;
-}
-.card:hover {
-  transform: scale(1.06);
-}
-
 .arrow {
   cursor: pointer;
   transition: 0.3s transform;
 }
-
 .left {
   transform: rotate(-90deg);
+  &:hover {
+    transform: rotate(-90deg) translateY(-5px);
+  }
 }
-.left:hover {
-  transform: rotate(-90deg) translateY(-5px);
-}
-
 .right {
   transform: rotate(90deg);
+  &:hover {
+    transform: rotate(90deg) translateY(-5px);
+  }
 }
-.right:hover {
-  transform: rotate(90deg) translateY(-5px);
-}
-
 @media (max-width: 700px) {
   .img-cont {
     gap: 20px;
@@ -128,4 +113,4 @@ main {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-}/*# sourceMappingURL=globals.css.map */
+}
